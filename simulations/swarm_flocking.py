@@ -27,7 +27,9 @@ def main() -> None:
         velocities += forces * dt
         speed = np.linalg.norm(velocities, axis=1, keepdims=True)
         max_speed = 3.0
-        velocities = np.where(speed > max_speed, velocities / speed * max_speed, velocities)
+        velocities = np.where(
+            speed > max_speed, velocities / speed * max_speed, velocities
+        )
         positions += velocities * dt
         history[t] = positions.copy()
 

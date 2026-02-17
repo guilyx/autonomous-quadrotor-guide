@@ -50,7 +50,12 @@ def main() -> None:
         if parent >= 0:
             p = planner.nodes[parent]
             ax.plot(
-                [p[0], node[0]], [p[1], node[1]], [p[2], node[2]], "g-", alpha=0.1, linewidth=0.5
+                [p[0], node[0]],
+                [p[1], node[1]],
+                [p[2], node[2]],
+                "g-",
+                alpha=0.1,
+                linewidth=0.5,
             )
 
     # Draw path.

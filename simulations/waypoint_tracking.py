@@ -44,7 +44,9 @@ def main() -> None:
     states_arr = np.array(all_states)
     times_arr = np.array(all_times)
 
-    plot_trajectory_3d(positions, title="Geometric Control: Waypoint Tracking", reference=waypoints)
+    plot_trajectory_3d(
+        positions, title="Geometric Control: Waypoint Tracking", reference=waypoints
+    )
     plot_state_history(times_arr, states_arr, title="Geometric Control: State History")
 
 

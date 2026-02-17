@@ -33,7 +33,9 @@ def main() -> None:
     colours = plt.cm.Set2(np.linspace(0, 1, N))
     for i in range(N):
         ax.plot(history[:, i, 0], history[:, i, 1], "-", color=colours[i], alpha=0.5)
-        ax.scatter(history[-1, i, 0], history[-1, i, 1], s=80, color=colours[i], zorder=5)
+        ax.scatter(
+            history[-1, i, 0], history[-1, i, 1], s=80, color=colours[i], zorder=5
+        )
     ax.set_xlim(bounds[0, 0], bounds[1, 0])
     ax.set_ylim(bounds[0, 1], bounds[1, 1])
     ax.set_aspect("equal")

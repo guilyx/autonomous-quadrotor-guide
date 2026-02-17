@@ -42,7 +42,12 @@ def main() -> None:
     ax.plot(*leader_positions.T, "k-", linewidth=2, label="Leader")
     colours = ["r", "g", "b"]
     for i in range(3):
-        ax.plot(*follower_positions[:, i, :].T, f"{colours[i]}-", alpha=0.7, label=f"Follower {i}")
+        ax.plot(
+            *follower_positions[:, i, :].T,
+            f"{colours[i]}-",
+            alpha=0.7,
+            label=f"Follower {i}",
+        )
     ax.set_xlabel("X")
     ax.set_ylabel("Y")
     ax.set_zlabel("Z")

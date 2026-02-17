@@ -40,7 +40,13 @@ def main() -> None:
     ax = fig.add_subplot(111, projection="3d")
     colours = ["r", "g", "b", "m"]
     for i in range(N):
-        ax.plot(history[:, i, 0], history[:, i, 1], history[:, i, 2], f"{colours[i]}-", alpha=0.5)
+        ax.plot(
+            history[:, i, 0],
+            history[:, i, 1],
+            history[:, i, 2],
+            f"{colours[i]}-",
+            alpha=0.5,
+        )
         ax.scatter(*history[-1, i], s=60, c=colours[i], marker="o")
     ax.set_xlabel("X")
     ax.set_ylabel("Y")

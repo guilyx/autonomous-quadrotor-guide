@@ -28,7 +28,14 @@ def main() -> None:
 
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection="3d")
-    ax.plot(positions[:, 0], positions[:, 1], positions[:, 2], "b-", linewidth=2, label="Min-snap")
+    ax.plot(
+        positions[:, 0],
+        positions[:, 1],
+        positions[:, 2],
+        "b-",
+        linewidth=2,
+        label="Min-snap",
+    )
     ax.scatter(
         waypoints[:, 0],
         waypoints[:, 1],

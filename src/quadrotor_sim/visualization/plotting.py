@@ -79,7 +79,14 @@ def plot_trajectory_3d(
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection="3d")
 
-    ax.plot(positions[:, 0], positions[:, 1], positions[:, 2], "b-", label="Actual", linewidth=1.5)
+    ax.plot(
+        positions[:, 0],
+        positions[:, 1],
+        positions[:, 2],
+        "b-",
+        label="Actual",
+        linewidth=1.5,
+    )
 
     if reference is not None:
         ax.plot(

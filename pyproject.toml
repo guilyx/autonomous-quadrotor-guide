@@ -21,16 +21,10 @@ dependencies = [
     "numpy>=2.0",
     "scipy>=1.14",
     "matplotlib>=3.9",
+    "pillow>=12.1.1",
 ]
 
 [project.scripts]
-sim-hover = "simulations.hover_pid:main"
-sim-waypoint = "simulations.waypoint_tracking:main"
-sim-geometric = "simulations.geometric_control_demo:main"
-sim-planning = "simulations.path_planning_3d:main"
-sim-minsnap = "simulations.min_snap_demo:main"
-sim-flocking = "simulations.swarm_flocking:main"
-sim-leader = "simulations.leader_follower_demo:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -59,6 +53,9 @@ src = ["src", "tests", "simulations"]
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "SIM", "N"]
 ignore = ["E501", "N802", "N803", "N806", "N815"]
+
+[tool.ruff.lint.per-file-ignores]
+"simulations/**/run.py" = ["E702"]
 
 [tool.ruff.format]
 quote-style = "double"

@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Geometric controller on SO(3) following Lee, Leok, McClamroch (CDC 2010)."""
+"""Geometric controller on SO(3) for quadrotor trajectory tracking.
+
+Reference: T. Lee, M. Leok, N. H. McClamroch, "Geometric Tracking Control
+of a Quadrotor UAV on SE(3)," CDC, 2010. DOI: 10.1109/CDC.2010.5717652
+"""
 
 from __future__ import annotations
 
@@ -84,9 +88,7 @@ class GeometricController:
         # --- Position control ---
         e_pos = pos - target_pos
         e_vel = vel - target_vel
-        F_des = (
-            -c.kx * e_pos - c.kv * e_vel + c.mass * c.gravity * e3 + c.mass * target_acc
-        )
+        F_des = -c.kx * e_pos - c.kv * e_vel + c.mass * c.gravity * e3 + c.mass * target_acc
 
         # Thrust magnitude.
         T = float(F_des @ R @ e3)

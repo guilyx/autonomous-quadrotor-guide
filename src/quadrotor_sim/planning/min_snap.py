@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Minimum-snap trajectory generation (Mellinger & Kumar, ICRA 2011)."""
+"""Minimum-snap trajectory generation for quadrotor flight.
+
+Reference: D. Mellinger, V. Kumar, "Minimum Snap Trajectory Generation and
+Control for Quadrotors," ICRA, 2011. DOI: 10.1109/ICRA.2011.5980409
+"""
 
 from __future__ import annotations
 
@@ -175,9 +179,7 @@ class MinSnapTrajectory:
             for t in ts:
                 pos = np.array(
                     [
-                        float(
-                            sum(coeffs[d][k, i] * t**i for i in range(self.NUM_COEFFS))
-                        )
+                        float(sum(coeffs[d][k, i] * t**i for i in range(self.NUM_COEFFS)))
                         for d in range(dim)
                     ]
                 )

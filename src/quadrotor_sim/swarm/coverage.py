@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Voronoi-based area coverage (Lloyd's algorithm)."""
+"""Voronoi-based area coverage using Lloyd's algorithm.
+
+Reference: J. Cortes et al., "Coverage Control for Mobile Sensing Networks,"
+IEEE T-RA, 2004. DOI: 10.1109/TRA.2004.824698
+"""
 
 from __future__ import annotations
 

@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Particle filter (sequential importance resampling) for state estimation."""
+"""Particle filter (sequential importance resampling) for state estimation.
+
+Reference: M. S. Arulampalam et al., "A Tutorial on Particle Filters for
+Online Nonlinear/Non-Gaussian Bayesian Tracking," IEEE TSP, 2002.
+DOI: 10.1109/78.978374
+"""
 
 from __future__ import annotations
 
@@ -43,9 +48,7 @@ class ParticleFilter:
         spread: float = 0.1,
     ) -> None:
         """Initialise particles around x0 with Gaussian spread."""
-        self.particles = np.random.default_rng().normal(
-            loc=x0, scale=spread, size=(self.N, self.n)
-        )
+        self.particles = np.random.default_rng().normal(loc=x0, scale=spread, size=(self.N, self.n))
         self.weights = np.ones(self.N) / self.N
 
     def predict(self, u: NDArray[np.floating], dt: float) -> NDArray[np.floating]:

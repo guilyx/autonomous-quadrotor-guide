@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Consensus-based formation control via graph Laplacian."""
+"""Consensus-based formation control via graph Laplacian.
+
+Reference: R. Olfati-Saber, R. M. Murray, "Consensus Problems in Networks
+of Agents with Switching Topology," IEEE TAC, 2004. DOI: 10.1109/TAC.2004.834113
+"""
 
 from __future__ import annotations
 

@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Polynomial trajectory generation through waypoints."""
+"""Polynomial trajectory generation through waypoints.
+
+Reference: C. Richter, A. Bry, N. Roy, "Polynomial Trajectory Planning for
+Aggressive Quadrotor Flight in Dense Indoor Environments," ISRR, 2013.
+DOI: 10.1007/978-3-319-28872-7_37
+"""
 
 from __future__ import annotations
 

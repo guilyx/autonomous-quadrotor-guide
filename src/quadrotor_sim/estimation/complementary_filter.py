@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Complementary filter for attitude estimation from gyro + accelerometer."""
+"""Complementary filter for attitude estimation from gyro + accelerometer.
+
+Reference: R. Mahony, T. Hamel, J.-M. Pflimlin, "Nonlinear Complementary
+Filters on the Special Orthogonal Group," IEEE TAC, 2008.
+DOI: 10.1109/TAC.2008.923738
+"""
 
 from __future__ import annotations
 
@@ -51,12 +56,8 @@ class ComplementaryFilter:
         accel_pitch = np.arctan2(-accel[0], np.sqrt(accel[1] ** 2 + accel[2] ** 2))
 
         # Integrate gyro rates.
-        self.roll = (
-            self.alpha * (self.roll + gyro[0] * dt) + (1.0 - self.alpha) * accel_roll
-        )
-        self.pitch = (
-            self.alpha * (self.pitch + gyro[1] * dt) + (1.0 - self.alpha) * accel_pitch
-        )
+        self.roll = self.alpha * (self.roll + gyro[0] * dt) + (1.0 - self.alpha) * accel_roll
+        self.pitch = self.alpha * (self.pitch + gyro[1] * dt) + (1.0 - self.alpha) * accel_pitch
 
         return self.roll, self.pitch
 

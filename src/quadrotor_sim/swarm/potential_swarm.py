@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Potential-based swarm navigation with inter-agent repulsion."""
+"""Potential-based swarm navigation with Lennard-Jones inter-agent potential.
+
+Reference: W. M. Spears et al., "Distributed, Physics-Based Control of
+Swarms of Vehicles," Autonomous Robots, 2004. DOI: 10.1023/B:AURO.0000033971.96584.f2
+"""
 
 from __future__ import annotations
 
@@ -93,8 +97,6 @@ class PotentialSwarm:
                     diff = positions[i] - centre
                     dist = np.linalg.norm(diff) - radius
                     if dist < self.obs_range and dist > 1e-6:
-                        forces[i] += (
-                            self.obs_gain / dist**2 * diff / np.linalg.norm(diff)
-                        )
+                        forces[i] += self.obs_gain / dist**2 * diff / np.linalg.norm(diff)
 
         return forces

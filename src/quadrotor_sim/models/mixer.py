@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Control allocation mixer: body wrench to individual motor forces."""
+"""Control allocation mixer: body wrench to individual motor forces.
+
+Reference: R. Mahony, V. Kumar, P. Corke, "Multirotor Aerial Vehicles,"
+IEEE RAM, 2012. DOI: 10.1109/MRA.2012.2206474
+"""
 
 from __future__ import annotations
 

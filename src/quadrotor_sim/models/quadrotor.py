@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Full 6DOF quadrotor rigid-body dynamics with Newton-Euler equations."""
+"""Full 6DOF quadrotor rigid-body dynamics with Newton-Euler equations.
+
+Reference: R. Mahony, V. Kumar, P. Corke, "Multirotor Aerial Vehicles:
+Modelling, Estimation and Control of Quadrotor," IEEE RAM, 2012.
+DOI: 10.1109/MRA.2012.2206474
+"""
 
 from __future__ import annotations
 
@@ -157,9 +162,7 @@ class Quadrotor:
 
         # Rotational dynamics (body frame).
         tau_b = np.array([tau_x, tau_y, tau_z])
-        omega_dot = np.linalg.solve(
-            inertia, tau_b - np.cross(omega_b, inertia @ omega_b)
-        )
+        omega_dot = np.linalg.solve(inertia, tau_b - np.cross(omega_b, inertia @ omega_b))
 
         # Euler angle kinematics.
         cp, sp = np.cos(phi), np.sin(phi)

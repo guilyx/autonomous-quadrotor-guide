@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Unscented Kalman Filter using Merwe scaled sigma points."""
+"""Unscented Kalman Filter using Van der Merwe scaled sigma points.
+
+Reference: E. A. Wan, R. Van Der Merwe, "The Unscented Kalman Filter for
+Nonlinear Estimation," AS-SPCC, 2000. DOI: 10.1109/ASSPCC.2000.882463
+"""
 
 from __future__ import annotations
 

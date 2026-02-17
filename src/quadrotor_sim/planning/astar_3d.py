@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""3D A* grid-based path planner."""
+"""3D A* grid-based path planner.
+
+Reference: P. E. Hart, N. J. Nilsson, B. Raphael, "A Formal Basis for the
+Heuristic Determination of Minimum Cost Paths," IEEE TSSC, 1968.
+DOI: 10.1109/TSSC.1968.300136
+"""
 
 from __future__ import annotations
 
@@ -65,11 +70,7 @@ class AStar3D:
             for d in self._NEIGHBOURS:
                 nb = (current[0] + d[0], current[1] + d[1], current[2] + d[2])
 
-                if not (
-                    0 <= nb[0] < shape[0]
-                    and 0 <= nb[1] < shape[1]
-                    and 0 <= nb[2] < shape[2]
-                ):
+                if not (0 <= nb[0] < shape[0] and 0 <= nb[1] < shape[1] and 0 <= nb[2] < shape[2]):
                     continue
                 if self.grid[nb]:
                     continue

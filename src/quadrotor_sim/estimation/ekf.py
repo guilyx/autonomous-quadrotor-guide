@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Extended Kalman Filter for 6DOF state estimation (IMU + GPS fusion)."""
+"""Extended Kalman Filter for nonlinear state estimation.
+
+Reference: S. Thrun, W. Burgard, D. Fox, "Probabilistic Robotics,"
+MIT Press, 2005, Chapter 3.3.
+"""
 
 from __future__ import annotations
 

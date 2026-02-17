@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Reynolds flocking: separation + alignment + cohesion."""
+"""Reynolds flocking: separation + alignment + cohesion.
+
+Reference: C. W. Reynolds, "Flocks, Herds and Schools: A Distributed
+Behavioral Model," SIGGRAPH '87, 1987. DOI: 10.1145/37402.37406
+"""
 
 from __future__ import annotations
 

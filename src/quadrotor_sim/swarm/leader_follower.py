@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Leader-follower formation control."""
+"""Leader-follower formation control.
+
+Reference: J. Desai, J. P. Ostrowski, V. Kumar, "Modeling and Control of
+Formations of Nonholonomic Mobile Robots," IEEE T-RA, 2001.
+DOI: 10.1109/70.976023
+"""
 
 from __future__ import annotations
 

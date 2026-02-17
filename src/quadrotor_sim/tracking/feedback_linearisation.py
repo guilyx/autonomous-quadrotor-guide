@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Feedback linearisation tracker exploiting quadrotor differential flatness."""
+"""Feedback linearisation tracker exploiting quadrotor differential flatness.
+
+Reference: D. Mellinger, V. Kumar, "Minimum Snap Trajectory Generation and
+Control for Quadrotors," ICRA, 2011 (Sec. IV). DOI: 10.1109/ICRA.2011.5980409
+"""
 
 from __future__ import annotations
 
@@ -37,9 +41,7 @@ class FeedbackLinearisationTracker:
         self.kd = np.atleast_1d(np.asarray(kd, dtype=np.float64))
         self.mass = mass
         self.gravity = gravity
-        self.inertia = (
-            inertia if inertia is not None else np.diag([1.4e-5, 1.4e-5, 2.17e-5])
-        )
+        self.inertia = inertia if inertia is not None else np.diag([1.4e-5, 1.4e-5, 2.17e-5])
 
     def compute(
         self,

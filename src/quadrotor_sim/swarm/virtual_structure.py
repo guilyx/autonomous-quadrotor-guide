@@ -1,5 +1,10 @@
 # Erwin Lejeune - 2026-02-16
-"""Virtual structure formation control."""
+"""Virtual structure formation control.
+
+Reference: M. A. Lewis, K.-H. Tan, "High Precision Formation Control of
+Mobile Robots Using Virtual Structures," Autonomous Robots, 1997.
+DOI: 10.1023/A:1008814708459
+"""
 
 from __future__ import annotations
 

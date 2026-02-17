@@ -1,5 +1,9 @@
 # Erwin Lejeune - 2026-02-16
-"""Model Predictive Path Integral (MPPI) sampling-based trajectory tracker."""
+"""Model Predictive Path Integral (MPPI) sampling-based trajectory tracker.
+
+Reference: G. Williams et al., "Information Theoretic MPC for Model-Based
+Reinforcement Learning," ICRA, 2017. DOI: 10.1109/ICRA.2017.7989202
+"""
 
 from __future__ import annotations
 
@@ -73,15 +77,10 @@ class MPPITracker:
             Control input for the current time step.
         """
         if self.dynamics is None or self.cost_fn is None:
-            raise RuntimeError(
-                "dynamics and cost_fn must be set before calling compute."
-            )
+            raise RuntimeError("dynamics and cost_fn must be set before calling compute.")
 
         rng = np.random.default_rng(seed)
-        noise = (
-            rng.normal(0, 1, (self.K, self.horizon, self.control_dim))
-            * self.control_std
-        )
+        noise = rng.normal(0, 1, (self.K, self.horizon, self.control_dim)) * self.control_std
         costs = np.zeros(self.K)
 
         for k in range(self.K):
